@@ -5,11 +5,11 @@
 
   - name: Download roles
     local_action:
-      command ansible-galaxy install -r roles/requirements.yml
+      command ansible-galaxy install -r roles/requirements.yml --force
 
   - name: Download collections
     local_action:
-      command ansible-galaxy collection install -r roles/requirements.yml
+      command ansible-galaxy collection install -r roles/requirements.yml --force
   
   - name: Prepare nodes for Kubeadm
     include_role:
