@@ -4,7 +4,7 @@
   tasks:
   - name: Download dependencies
     local_action:
-      command ansible-galaxy install -r requirements.yaml  --roles-path roles --force
+      command ansible-galaxy install -r requirements.yml --roles-path roles --force
   
   - name: Prepare nodes for Kubeadm
     include_role:
