@@ -1,16 +1,15 @@
 ---
+- name: run ansible galaxy
+	hosts: localhost
+	tasks:
+	- command: ansible-galaxy install -r ./roles/requirements.yml --force
+		delegate_to : localhost
+  - command: ansible-galaxy collection install -r roles/requirements.yml --force
+    delegate_to : localhost
+
 - name: Install K8S Master nodes
   hosts: k8s-masters
   tasks:
-
-  - name: Download roles
-    local_action:
-      command ansible-galaxy install -r roles/requirements.yml --force
-
-  - name: Download collections
-    local_action:
-      command ansible-galaxy collection install -r roles/requirements.yml --force
-  
   - name: Prepare nodes for Kubeadm
     include_role:
       name: prepare-k8s-node
