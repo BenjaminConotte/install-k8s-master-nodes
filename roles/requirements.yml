@@ -1,6 +1,12 @@
 ---
+
 roles:
 - name: prepare-k8s-node
   src: https://github.com/BenjaminConotte/prepare-k8s-node.git
+  type: git
+  version: main
+
+- name: install-k8s-master
+  src: 
   type: git
   version: main
