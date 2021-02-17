@@ -7,6 +7,6 @@ roles:
   version: main
 
 - name: install-k8s-master
-  src: 
+  src: https://github.com/BenjaminConotte/install-k8s-master-role.git
   type: git
   version: main
