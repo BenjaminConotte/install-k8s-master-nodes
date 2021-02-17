@@ -5,4 +5,6 @@
   - name: Prepare nodes for Kubeadm
     include_role:
       name: prepare-k8s-node
-  
+  - name: Install Kubernetes master nodes
+    include_role:
+      name: install-k8s-master
